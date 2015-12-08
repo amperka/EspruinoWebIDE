@@ -126,7 +126,18 @@
   }    
   
   function onEditorHover(info, callback) {
-    if (inDebugMode && !callbackOnEqualsLine) {
+    function setTooltip(value) {
+      knownValues[name] = value;
+      var tip = document.createElement("div");
+      tip.className = "CodeMirror-debug-tooltip";
+      tip.appendChild(document.createTextNode(name + " = " + value));      
+      info.showTooltip(tip);
+    };
+
+    if (inDebugMode && // in debug mode
+        !callbackOnEqualsLine && // we're not trying to do something already
+        Espruino.Core.Terminal.getTerminalLine()=="debug>" // user is not currently typing on LHS
+        ) {
       var name;
       if (info.node.className=="cm-variable" ||
           info.node.className=="cm-def") {
@@ -142,13 +153,6 @@
         }
       }
       if (name) { 
-        function setTooltip(value) {
-          knownValues[name] = value;
-          var tip = document.createElement("div");
-          tip.className = "CodeMirror-debug-tooltip";
-          tip.appendChild(document.createTextNode(name + " = " + value));      
-          info.showTooltip(tip);
-        };
         if (name in knownValues) {
           setTooltip(knownValues[name]);
         } else {
