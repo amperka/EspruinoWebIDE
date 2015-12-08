@@ -1,7 +1,7 @@
 {
-  "name": "Espruino Web IDE",
-  "short_name": "Espruino IDE",
-  "description": "A Terminal and Graphical code Editor for Espruino JavaScript Microcontrollers",
+  "name": "Iskra IDE",
+  "short_name": "Iskra IDE",
+  "description": "A development environment for Iskra JS boards (based on Espruino Web IDE)",
   "version": "0.59.0",
   "app": {
     "background": {
@@ -26,9 +26,9 @@
   "manifest_version": 2,
   "url_handlers": {
     "espruino_code": {
-      "title": "Load code into the Espruino Web IDE",
+      "title": "Load code into the Iskra IDE",
       "matches": [
-        "http://www.espruino.com/webide*"
+        "http://js.amperka.ru/webide*"
       ]
     }
   }
