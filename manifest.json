@@ -2,7 +2,7 @@
   "name": "Iskra IDE",
   "short_name": "Iskra IDE",
   "description": "A development environment for Iskra JS boards (based on Espruino Web IDE)",
-  "version": "0.59.0",
+  "version": "0.59.1",
   "app": {
     "background": {
       "scripts": ["js/background.js"]
