@@ -25,7 +25,7 @@
     });    
 
     // Setup code mode button
-    viewModeButton = Espruino.Core.App.addIcon({ 
+    /*viewModeButton = Espruino.Core.App.addIcon({ 
       id: "code",
       icon: "code", 
       title : "Switch between Code and Graphical Designer", 
@@ -42,7 +42,7 @@
           switchToBlockly();
         }
       }
-    });
+    });*/
 
     // get code from our config area at bootup
     Espruino.addProcessor("initialised", function(data,callback) {
@@ -73,13 +73,13 @@
   function switchToBlockly() {
     $("#divcode").hide();
     $("#divblockly").show();
-    viewModeButton.setIcon("block");
+    //viewModeButton.setIcon("block");
   }
 
   function switchToCode() {
     $("#divblockly").hide();
     $("#divcode").show();
-    viewModeButton.setIcon("code");
+    //viewModeButton.setIcon("code");
   }
 
   function getEspruinoCode(callback) {
